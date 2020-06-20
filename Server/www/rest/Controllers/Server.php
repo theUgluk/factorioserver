@@ -5,7 +5,7 @@ class Controllers_Server extends RestController {
       if(isset($_GET['action']) && !empty($_GET['action'])){
         switch($_GET['action']){
           case "mapArray":
-            $this->response = file_get_contents("/var/www/rest/mapArray.json");
+            $this->response = json_decode(file_get_contents("/var/www/rest/mapArray.json"));
             $this->responseStatus = 200;
             return true;
           break;
