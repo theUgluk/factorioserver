@@ -317,13 +317,11 @@ abstract class RestController {
     protected $request;
     protected $response;
     protected $responseStatus;
-    protected $dbHandler;
     protected $testEnv;
     protected $userId;
 
     public function __construct($request) {
         $this->request = $request;
-        $this->dbHandler = new Tools_DatabaseHandler();
 //        header('Access-Control-Allow-Origin: https://test.fintoolbox.nl/');
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
