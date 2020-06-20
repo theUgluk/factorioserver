@@ -3,7 +3,7 @@
 /*
  * Copyright 2011 <http://voidweb.com>.
  * Author: Deepesh Malviya <https://github.com/deepeshmalviya>.
- * 
+ *
  * Simple-REST - Lightweight PHP REST Library
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -16,7 +16,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations
- * under the License. 
+ * under the License.
  */
 
 /**
@@ -40,7 +40,7 @@ class Rest {
 
     /**
      * Function processing raw HTTP request headers & body
-     * and populates them to class variables. 
+     * and populates them to class variables.
      */
     private function processRequest() {
         $this->request['resource'] = (isset($_GET['RESTurl']) && !empty($_GET['RESTurl'])) ? $_GET['RESTurl'] : 'index';
@@ -350,18 +350,7 @@ abstract class RestController {
     }
 
     public function checkAuth() {
-        $allHeaders = $this->getAllHeaders();
-        if (array_key_exists("Authorization", $allHeaders)) {
-            $token = $this->dbHandler->customSelectQuery("SELECT userId FROM loginTokens
-                WHERE token = '" . $this->dbHandler->escape_string($allHeaders['Authorization']) . "'
-                    AND expiresAt > '" . time() . "'");
-
-            if (count($token) === 1) {
-                $this->userId = $token[0]['userId'];
-                return true;
-            }
-        }
-        return false;
+      return true;
     }
 
     // @codeCoverageIgnoreStart
@@ -381,15 +370,6 @@ abstract class RestController {
 
     final protected function checkData($var) {
         if (isset($var) && $var !== false) {
-            return true;
-        }
-        return false;
-    }
-
-    //check of we op een testomgeving zitten of niet
-    //@returns bool: true als dit de testomgeving is
-    protected function getTestEnv() {
-        if (in_array("dev", explode(".", $_SERVER["HTTP_HOST"]))) {
             return true;
         }
         return false;
