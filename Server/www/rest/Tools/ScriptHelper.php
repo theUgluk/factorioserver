@@ -1,6 +1,6 @@
 <?php
 
-  class ScriptHelper {
+  class Tools_ScriptHelper {
     private $allowedScripts = array(
         "changeSave" => "/var/www/rest/changeSave.sh",
         "createBackup" => "/opt/backups/scripts/makeBackup.sh"
