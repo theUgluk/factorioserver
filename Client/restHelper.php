@@ -1,5 +1,5 @@
 <?php
-
+ini_set("display_errors", 1);
 // Method: POST, PUT, GET etc
 // Data: array("param" => "value") ==> index.php?param=value
 //Directly copied from SO, cuz I'm still a dev (https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php)
@@ -30,7 +30,9 @@ function CallAPI($method, $url, $data = false)
 
     $result = curl_exec($curl);
 
+    if(!$result){
+      var_dump(curl_error($curl));
+    }
     curl_close($curl);
-
     return $result;
 }
