@@ -8,7 +8,7 @@ class Controllers_Server extends RestController {
   public function __construct($request) {
     $this->scriptHelper = new Tools_ScriptHelper();
     $this->mapArray = $this->loadSaves();
-    parent::__construct();
+    parent::__construct($request);
   }
 
   public function get(){
