@@ -28,7 +28,7 @@ class Controllers_Server extends RestController {
           switch($_GET['action']){
             case "changeSave":
               if(array_key_exists("map", $this->params){
-                $this->scriptHelper->runScript("changeSave", $this->params->map);
+                $this->scriptHelper->runScript("changeSave", $this->params['map']);
                 $this->response = array();
                 $this->responseStatus = 200;
               }
