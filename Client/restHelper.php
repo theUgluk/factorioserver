@@ -24,7 +24,7 @@ function CallAPI($method, $url, $data = false)
 
     // Optional Authentication:
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($ch, CURLOPT_PORT, 81);
+    curl_setopt($curl, CURLOPT_PORT, 81);
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
