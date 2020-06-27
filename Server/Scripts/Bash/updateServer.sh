@@ -9,9 +9,9 @@ if [[ $testResult == *"would have fetched update"* ]]; then
   #Create backup
   saveDate=`date '+%Y.%m.%d.%H.%M'`
   echo $saveDate
-  mkdir /opt/backups/folders/$saveDate/
+  mkdir "/opt/backups/folders/$saveDate/"
 #  cp -R /opt/factorio/* /opt/backups/folders/$saveDate/
 #  echo "Update!"
 else
-#  echo "No update!"
+  echo "No update!"
 fi
