@@ -1,0 +1,4 @@
+# Crontabs for the factorio user
+
+0 12    */1 * * factorio /bin/bash /opt/backups/scripts/makeBackup.sh
+0 */1   *   * * factorio /bin/bash /opt/backups/scripts/updateServer.sh
