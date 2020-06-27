@@ -11,7 +11,7 @@ if [[ $testResult == *"would have fetched update"* ]]; then
   mkdir "/opt/backups/folders/$saveDate/"
   cp -R /opt/factorio/* /opt/backups/folders/$saveDate/
   # Do the actual update
-  python3 update_factorio.py -xD --apply-to /opt/factorio/bin/x64/factorio
+  python3 /opt/factorio/update_factorio.py -xD --apply-to /opt/factorio/bin/x64/factorio
 else
   echo "No update!"
 fi
