@@ -224,7 +224,7 @@
       return $ch->error();
   }
 
-  function curlemuclose($ch) {
+  function curlemu_close($ch) {
       return $ch->close();
   }
 
