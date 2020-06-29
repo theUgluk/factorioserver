@@ -2,7 +2,7 @@
 <?php
 require("Helpers/restHelper.php");
 
-$saves = json_decode(file_get_contents("http://77.160.106.150:81/rest/Server?action=mapArray"), true)["saves"];
+$saves = json_decode(file_get_contents("http://77.160.106.150:80/rest/Server?action=mapArray"), true)["saves"];
 ?>
 <html>
   <head>
